@@ -20,4 +20,4 @@ function mutation(arr) {
         return arr[0].toLowerCase().includes(letter);
       });
   }
-  console.log(mutation2(['Maxim','Mix']))
+  console.log(mutation2(['Maxim','Mix'])) // true встречаются одинаковые символы
