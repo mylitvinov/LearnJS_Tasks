@@ -1,36 +1,61 @@
 let salaries = {
-    John: 100,
-    Ann: 160,
-    Pete: 130
+  John: 100,
+  Ann: 160,
+  Pete: 130,
+};
+
+const sumZp = (obj) => {
+  let sum = 0;
+  for (let prop in obj) {
+    sum += obj[prop];
+  }
+  return sum;
+};
+
+console.log(sumZp(salaries)); // 390
+
+// 2 вариант
+function sumSalaries(salaries) {
+  let sum = 0;
+  for (let salary of Object.values(salaries)) {
+    sum += salary;
   }
 
+  return sum;
+}
 
-  const sumZp = (obj) => {
-      let sum = 0;
-      for (let prop in obj) {
-          sum += obj[prop];
-      }
+console.log(sumSalaries(salaries)); // 390
 
-      return sum;
-  }
+let salaries2 = {
+  John: 100,
+  Pete: 300,
+  Mary: 250,
+};
 
-  console.log(sumZp(salaries))
+const valOfSalaries2 = Object.values(salaries2);
+// const keyOfSalaries2 = Object.keys(salaries2);
+const entries = Object.entries(salaries2);
 
-  // 2 вариант
-  function sumSalaries(salaries) {
+console.log(valOfSalaries2);
 
-    let sum = 0;
-    for (let salary of Object.values(salaries)) {
-      sum += salary;
+const sumSal = valOfSalaries2.reduce((prev, cur) => (prev += cur));
+console.log(sumSal);
+
+const isBigSal = valOfSalaries2.reduce((prev, cur, index, array) => {
+  return cur > prev ? cur : prev;
+});
+console.log(isBigSal);
+
+const big = (obj) => {
+  // const big = {};
+  for (const key in obj) {
+    if (obj[key] === isBigSal) {
+      // big[key] = isBigSal;
+      console.log(`Самая большая ЗП у ${key} , она составляет ${isBigSal} евро`);
+      // console.log('yes')
     }
-  
-    return sum; // 650
   }
-  
-  let salaries = {
-    "John": 100,
-    "Pete": 300,
-    "Mary": 250
-  };
-  
-  console.log( sumSalaries(salaries) ); // 650
+  // return big;
+};
+
+console.log(big(salaries2));
