@@ -8,4 +8,4 @@ function isEmpty(obj) {
 }
 
 let shedule = {};
-console.log(isEmpty(shedule))
+console.log(isEmpty(shedule)) // true
