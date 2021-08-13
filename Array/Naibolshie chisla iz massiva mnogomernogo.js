@@ -24,7 +24,14 @@ function largestOfFour(arr) {
       });
     });
   }
-  console.log(largestOfFour([[23, 43, 45], [67, 78, 234], [23, 789, 345], [87, 23, 567]]))
+  const arrLargest = largestOfFour([[23, 43, 45], [67, 78, 234], [23, 789, 345], [87, 23, 567]])
+  console.log(arrLargest)
+
+ //[ 45, 234, 789, 567 ]
+
+ const BigOfarrLargest = arrLargest.reduce((prev,next) => {
+return next > prev ? next : prev
+ })
+console.log(BigOfarrLargest)
 
 
-  //3 variant 
