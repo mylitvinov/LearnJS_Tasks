@@ -3,7 +3,13 @@ let petya = { name: "Петя", age: 30 };
 let masha = { name: "Маша", age: 28 };
 let maxim = { name: "Максим", age: 33 };
 
-let users = [vasya, petya, masha, maxim];
+// args = [vasya, petya, masha, maxim]
+// let users = [... args]
+
+ let users = [vasya, petya, masha, maxim];
+
+
+console.log(users)
 
 // Находим массив всех имен
 let names = users.map((item) => item.name);
