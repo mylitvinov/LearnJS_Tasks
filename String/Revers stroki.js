@@ -1,45 +1,47 @@
 // 1 способ
-const revers = str => {
-    let revStr = '';
-   revStr = str.toLowerCase().split('').reverse().join('');
-    return revStr
-}
+const revers = (str) => {
+  let revStr = "";
+  revStr = str.toLowerCase().split("").reverse().join("");
+  return revStr;
+};
 
-console.log(revers('Привет'))
+console.log(revers("Привет")); // тевирп
 
 // 2 способ
 
-const revers2 = str2 =>{
-    let revStr2 = '';
-    for(i=str2.length-1; i>=0; i--){
-        revStr2 += str2[i];
-        
-    }
-    return revStr2
-}
+const revers2 = (str2) => {
+  let revStr2 = "";
+  for (i = str2.length - 1; i >= 0; i--) {
+    revStr2 += str2[i];
+  }
+  return revStr2;
+};
 
-console.log(revers2('Максим'));
+console.log(revers2("Максим")); // мискаМ
 
 // 3 способ вместо join -- reduce
 
-const revers3 = str3 => {
-    let revStr3 = '';
-   revStr = str3.toLowerCase().split('').reverse().reduce( (sum,el) => {
-       return sum + el;
-   });
-    return revStr
-}
+const revers3 = (str3) => {
+  let revStr3 = "";
+  revStr = str3
+    .toLowerCase()
+    .split("")
+    .reverse()
+    .reduce((sum, el) => {
+      return sum + el;
+    });
+  return revStr;
+};
 
-console.log(revers3('Привет'));
+console.log(revers3("Привет"));
 
 // 5 способ с помощью рекурсии
 
 function reverseString(str5) {
-    if (str5 === "") // Условие выхода из рекурсии
-      return "";
-    
-    else
-      return reverseString(str5.substring(1)) + str5.charAt(0);
+  if (str5 === "")
+    // Условие выхода из рекурсии
+    return "";
+  else return reverseString(str5.substring(1)) + str5.charAt(0);
   /* 
   Первая часть рекурсивного метода
   Вам нужно помнить, что будет не один вызов функции, а несколько вложенных вызовов
@@ -58,7 +60,6 @@ function reverseString(str5) {
   2nd call will return reverserString("llo") + "e" = "o" + "l" + "l" + "e"
   1st call will return reverserString("ello") + "h" = "o" + "l" + "l" + "e" + "h" 
   */
-  }
-  
-  console.log(reverseString("hello"));
+}
 
+console.log(reverseString("hello"));

@@ -1,13 +1,14 @@
 function getCount(str) {
-    let vowelsCount = 0;
-    
-     vowelsCount = str.toLowerCase().split('').filter(letter =>'aeiou'.includes(letter)).length;
+  let vowelsCount = 0;
 
-       
-    // enter your majic here
-    
-    return vowelsCount;
-  }
+  vowelsCount = str
+    .toLowerCase()
+    .split("")
+    .filter((letter) => "aeiou".includes(letter)).length;
 
-  console.log(getCount('MaximkAsadfsfa'));
- 
+  // enter your majic here
+
+  return vowelsCount;
+}
+
+console.log(getCount("MaximkAsadfsfa")); // 5

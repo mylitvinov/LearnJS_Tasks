@@ -9,4 +9,4 @@ function truncate(str, maxlength) {
       str.slice(0, maxlength - 1) + '…' : str;
   }
 
-  console.log(truncate('asfdsf sfsgsd dgdfgdgdd dhdhd', 15))
+  console.log(truncate('asfdsf sfsgsd dgdfgdgdd dhdhd', 15)) // asfdsf sfsgsd …
