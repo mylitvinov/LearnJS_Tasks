@@ -6,10 +6,9 @@ let maxim = { name: "Максим", age: 33 };
 // args = [vasya, petya, masha, maxim]
 // let users = [... args]
 
- let users = [vasya, petya, masha, maxim];
+let users = [vasya, petya, masha, maxim];
 
-
-console.log(users)
+console.log(users);
 
 // Находим массив всех имен
 let names = users.map((item) => item.name);
@@ -50,18 +49,24 @@ const isLess30Name = users.reduce((acc, user) => {
   return acc.length ? acc : "Нет людей, удовлетворяющих поиску";
 }, []);
 
-console.log(isLess30Name);
+console.log(isLess30Name); //[ 'Вася', 'Маша' ]
 
 // 3) Находим средний возраст людей
 
-const ageAverage = users.reduce((acc, user, index, array) => {
-  acc += user.age;
-  if (index === array.length - 1) {
-    return acc / array.length;
-  } else {
-    return acc;
-  }
-}, 0);
+// const ageAverage = users.reduce((acc, user, index, array) => {
+//   acc += user.age;
+//   if (index === array.length - 1) {
+//     return acc / array.length;
+//   } else {
+//     return acc;
+//   }
+// }, 0);
 
+// ИЛИ
 
-console.log(ageAverage);
+const ageAverage =
+  users.reduce((prev, user) => {
+    return prev + user.age;
+  }, 0) / users.length;
+
+console.log(ageAverage); // 29

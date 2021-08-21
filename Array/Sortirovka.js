@@ -2,13 +2,13 @@
 
 let arr = [ 3,1, 2, 15,7,4,9 ];
 
-console.log(arr.sort( (a, b) => a - b ));
+console.log(arr.sort( (a, b) => a - b )); // [ 1, 2,  3, 4, 7, 9, 15]
 
 
 // По убыванию
 
 let arr2 = [5, 2, 1, -10, 8];
 
-arr2.sort((a, b) => b - a);
+arr2.sort((a, b) => b - a); 
 
 console.log( arr2 ); // 8, 5, 2, 1, -10
