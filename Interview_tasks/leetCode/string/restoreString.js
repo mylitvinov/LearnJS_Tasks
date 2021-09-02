@@ -42,6 +42,14 @@ const restoreString = (s, indices) => {
 //   return indices.reduce((a,c,i) => a + s[indices.indexOf(i)],"")
 // };
 
+
+/*
+const restoreString = (s, indices) => s.split('').reduce((acc, l, i) => {
+    acc[indices[i]] = l
+    return acc                                                                    
+}, []).join('')
+*/
+
 console.log(restoreString(s1, indices1));
 console.log(restoreString(s2, indices2));
 console.log(restoreString(s3, indices3));
