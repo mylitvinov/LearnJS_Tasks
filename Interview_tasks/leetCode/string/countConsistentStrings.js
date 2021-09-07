@@ -26,22 +26,12 @@ let allowed1 = "ab", words1 = ["ad","bd","aaab","baa","dab"]
 let allowed2 = "abc", words2 = ["a","b","c","ab","ac","bc","abc"]
 let allowed3 = "cad", words3 = ["cc","acd","b","ba","bac","bad","ac","d"]
 
-const countConsistentStrings = (allowed, words) => {
-
-   let objCount = words.reduce((total,el) =>{
-      for (const i of el.split('')) {
-        allowed.includes(i) ? total[el] += 'YES' : total[el] += 'NO'
-      }
-      return total
-     
-    }, {})
-
-    return Object.keys(objCount).filter(el => {
-      return !objCount[el].includes('NO')
-    }).length
-};
+const countConsistentStrings = (allowed, words) => 
+    words.filter(
+        word => [...word].every(letter => allowed.includes(letter))
+    ).length
 
 
-console.log(countConsistentStrings(allowed1,words1))
-console.log(countConsistentStrings(allowed2,words2))
-console.log(countConsistentStrings(allowed3,words3))
+console.log(countConsistentStrings(allowed1,words1)) // 2
+console.log(countConsistentStrings(allowed2,words2)) //7
+console.log(countConsistentStrings(allowed3,words3)) // 4
