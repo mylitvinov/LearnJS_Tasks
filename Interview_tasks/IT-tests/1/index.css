@@ -13,6 +13,6 @@
   padding: 10px;
 }
 
-.active {
+.stars img.active {
   background-color: yellow; /* Цвет активной ссылки */ 
  } 
