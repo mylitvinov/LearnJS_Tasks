@@ -4,7 +4,7 @@ const screens = document.querySelectorAll(".screen");
 const timeList = document.querySelector("#time-list ");
 const timeEl = document.querySelector("#time");
 const board = document.querySelector("#board");
-const menuBtn = document.querySelector('#menu')
+const menuBtn = document.querySelector("#menu");
 const backgroundColor = [
   "red",
   "green",
@@ -65,11 +65,11 @@ function setTime(value) {
 function finishGame() {
   timeEl.parentNode.classList.add("hide");
   board.innerHTML = `<h1>Счет: <span class='primary'>${score}</span> </h1>`;
-  menuBtn.classList.remove('hide')
- }
- menuBtn.addEventListener('click', ()=>{
-  location.reload()
-})
+  menuBtn.classList.remove("hide");
+}
+menuBtn.addEventListener("click", () => {
+  location.reload();
+});
 
 function createRandomCircle() {
   const circle = document.createElement("div");
@@ -92,3 +92,15 @@ function getRandomNumber(min, max) {
   return Math.round(Math.random() * (max - min) + min);
 }
 
+
+// Hack
+function winGame() {
+  function kill() {
+    const circle = document.querySelector(".circle");
+    if (circle) {
+      circle.click();
+    }
+  }
+
+  setInterval(kill, 45);
+}
